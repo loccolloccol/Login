@@ -1,0 +1,19 @@
+﻿@model LogViewModel
+@{
+    ViewBag.Title = "Login";
+}
+
+<h2>Login</h2>
+
+@using (Html.BeginForm("Login", "Login", FormMethod.Post))
+{
+    <p>@Html.ValidationMessage("loggin")</p>
+    <p>@Html.LabelFor(x => x.Account):@Html.TextBoxFor(x => x.Account)</p>
+    <p>@Html.LabelFor(y => y.Password):@Html.TextBoxFor(y => y.Password)</p>
+    <div>
+        @Html.LabelFor(x => x.CapitalCode)@Session["Captial"]:@Html.TextBoxFor(x => x.CapitalCode)
+    </div>
+    <p>@Html.ValidationMessageFor(x=>x.CapitalCode)</p>
+    <input type="submit" value="登入">
+}
+
